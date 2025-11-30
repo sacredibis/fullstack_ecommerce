@@ -11,11 +11,14 @@ Here is a detailed outline of the technical requirements, broken down by the MER
 * Responsive Design across mobile, tablet, and desktop, using Tailwind CSS.  
 * Consistent, modern e-commerce aesthetic.  
 * Ensure all components (Navbar, Cart, Product Cards) are styled with Tailwind utilities for high re-usability.
+* A toggle switch that switches between light and dark themes; light theme accent color is green, and dark theme accent color is purple.
+* Smooth and clean animations.
+* Rounded corners and shadows creates a clean, professional, and user-friendly aesthetic.
 
 ### **Product Display**
 
-* Includes a homepage listing, product detail page (PDP), and category/search results page.  
-* Use React Router for page navigation.  
+* Includes a homepage listing, product detail page (PDP), and category/search results page.
+* Use React Router for page navigation.
 * The PDP must dynamically fetch product data using the product ID from the API.
 
 ### **State Management**
@@ -83,10 +86,10 @@ Here is a detailed outline of the technical requirements, broken down by the MER
 ### **Deployment**
 
 * Make the application live and accessible.  
-* **Frontend:** Deploy the React app on Vercel or Netlify.  
-* **Backend:** Deploy the Node/Express API on a service like Render or Fly.io.  
+* **Frontend:** Deploy the React app on Vercel.  
+* **Backend:** Deploy the Node/Express API on a service like Render.
 * Ensure the frontend correctly points to the live backend API URL.
-
+client/src/components/
 ## **Project Structure**
 
 fullstack_ecommerce/
@@ -221,3 +224,33 @@ fullstack_ecommerce/
 ├── .gitignore
 ├── README.md
 └── package.json                     # Root package.json (optional for monorepo)
+
+[Note] All files in sub-directories are initially created and are empty as default.
+
+# For the 'client/' directory:
+I already ran: 
+``` bash
+sudo npm install react-router-dom axios lucide-react @stripe/react-stripe-js @stripe/stripe-js @reduxjs/toolkit react-redux
+```:
+* But when this command was ran, it produced some errors, and whose errors are:
+```
+npm error code EJSONPARSE
+npm error JSON.parse Invalid package.json: JSONParseError: Unexpected end of JSON input while parsing empty string
+npm error JSON.parse Failed to parse JSON data.
+npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
+npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-26T09_00_54_541Z-debug-0.log
+```
+
+The command wasn't able to execute fully because the package.json is empty, this will need to be fixed.
+
+
+# For the 'server/' directory:
+I already ran: 
+``` bash
+sudo npm install express mongoose dotenv bcryptjs jsonwebtoken stripe cors cookie-parser
+```
+* Was successfully installed, but can still check to verify if these packages are properly installed.
+
+
+# For the description of files and directories in the already created file tree:
+* See ARCHITECTURE.md 
