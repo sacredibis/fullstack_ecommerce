@@ -366,7 +366,7 @@ Admin endpoints (`GET /api/admin/dashboard`, `GET /api/admin/users`, `DELETE /ap
 #### `server.js`
 Main server entry point - Express app setup, middleware configuration, route mounting, server start.
 
-#### `server.json` // Will come back to this once finished with all other sub-directories.
+#### `server.json`
 Server configuration file (may contain port, environment settings, or metadata).
 
 #### `.env`
