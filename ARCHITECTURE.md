@@ -321,7 +321,7 @@ Rate limiting middleware preventing API abuse (limits requests per IP/user).
 
 ## Models (`/server/models`)
 
-Database schema definitions (Mongoose/Sequelize models).
+Database schema definitions (Mongoose models).
 
 #### `User.js`
 User model schema (username, email, password hash, role, addresses, timestamps).
@@ -366,7 +366,7 @@ Admin endpoints (`GET /api/admin/dashboard`, `GET /api/admin/users`, `DELETE /ap
 #### `server.js`
 Main server entry point - Express app setup, middleware configuration, route mounting, server start.
 
-#### `server.json`
+#### `server.json` // Will come back to this once finished with all other sub-directories.
 Server configuration file (may contain port, environment settings, or metadata).
 
 #### `.env`

@@ -1,0 +1,5 @@
+{
+  "name": "ecommerce-server",
+  "description": "Metadata for the e-commerce backend server. Core configurations (port, environment settings, etc.) are handled via .env and server.js.",
+  "version": "1.0.0"
+}
