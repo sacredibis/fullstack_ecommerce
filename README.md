@@ -240,16 +240,94 @@ npm error JSON.parse Failed to parse JSON data.
 npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
 npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-26T09_00_54_541Z-debug-0.log
 ```
-
-The command wasn't able to execute fully because the package.json is empty, this will need to be fixed.
-
-
-# For the 'server/' directory:
-I already ran: 
-``` bash
-sudo npm install express mongoose dotenv bcryptjs jsonwebtoken stripe cors cookie-parser
 ```
-* Was successfully installed, but can still check to verify if these packages are properly installed.
+
+[Package Dependencies] :
+
+Here is a list of the npm packages required for the application to run, broken down by the frontend and backend, along with
+  guidance for deploying to a cloud service like Vercel.
+
+  [Required NPM Packages] :
+
+  You can install all dependencies for each part of the application by running npm install in both the client/ and server/
+  directories respectively.
+
+  Backend (server/)
+
+  These packages are required to run the Express API server.
+
+   * bcryptjs: For hashing user passwords.
+   * cookie-parser: To parse cookie headers.
+   * cors: To enable Cross-Origin Resource Sharing.
+   * dotenv: To load environment variables from a .env file.
+   * express: The web server framework.
+   * express-async-handler: To handle exceptions within async Express routes.
+   * express-rate-limit: For basic API rate-limiting.
+   * express-validator: For server-side input validation.
+   * jsonwebtoken: To create and verify JSON Web Tokens for authentication.
+   * mongoose: The Object Data Modeling (ODM) library for MongoDB.
+   * nodemailer: For sending emails (e.g., order confirmations).
+   * stripe: The official Node.js library for the Stripe payment API.
+
+  Development Dependency:
+   * nodemon: To automatically restart the server during development.
+
+  ---
+
+  Frontend (client/)
+
+  These packages are required for the React user interface.
+
+   * @reduxjs/toolkit: The official, opinionated toolset for efficient Redux development.
+   * @stripe/react-stripe-js & @stripe/stripe-js: To integrate Stripe Elements for payments in React.
+   * axios: For making HTTP requests to the backend API.
+   * lucide-react: A library of simply beautiful icons.
+   * react, react-dom, react-scripts: Core libraries for building a Create React App.
+   * react-redux: Official React bindings for Redux.
+   * react-router-dom: For client-side routing and navigation.
+
+  Development Dependency:
+   * tailwindcss: The utility-first CSS framework used for styling.
+
+  ---
+
+  Startup Commands for Cloud Services (like Vercel)
+
+  Deploying this full-stack project requires handling the frontend and backend separately, as they are distinct application
+  types.
+
+  1. Frontend Deployment (on Vercel)
+
+  Vercel is perfectly suited for deploying the frontend (client) part of your application.
+
+   * Startup Command: You do not need a special startup command. Vercel automatically detects Create React App and runs the
+     correct commands.
+   * Build Command: Vercel will use npm run build.
+   * Output Directory: Vercel will correctly identify the output as the build directory.
+
+  The most important configuration steps in your Vercel project settings would be:
+   1. Set the Root Directory: Set this to client. This tells Vercel to run the build commands from within your client-side
+      folder.
+   2. Set Environment Variables: You must set the REACT_APP_API_BASE_URL environment variable to the public URL of your deployed
+      backend API. You will also need to add your REACT_APP_STRIPE_PUBLIC_KEY.
+
+  2. Backend Deployment (Not on Vercel)
+
+  Your Express.js server is a long-running Node.js process, which is not compatible with Vercel's standard deployment model
+  (which is for static sites and serverless functions).
+
+  As recommended in the project's README.md, you should deploy the backend to a different service that supports persistent
+  Node.js applications, such as:
+   * Render (Recommended in your README.md)
+   * Heroku
+   * AWS EC2 or AWS Elastic Beanstalk
+
+  On a service like Render, you would typically configure:
+   * Start Command: npm start
+   * Environment Variables: You would need to add all the variables from your server/.env file (like MONGO_URI, JWT_SECRET,
+     etc.) into the service's environment variable settings.
+
+
 
 
 # For the description of files and directories in the already created file tree:
