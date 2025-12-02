@@ -228,7 +228,7 @@ fullstack_ecommerce/
 ```
 
 
-[Package Dependencies] :
+## **4\. Package Dependencies**
 
 Here is a list of the npm packages required for the application to run, broken down by the frontend and backend, along with
   guidance for deploying to a cloud service like Vercel.
