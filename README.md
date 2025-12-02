@@ -90,8 +90,9 @@ Here is a detailed outline of the technical requirements, broken down by the MER
 * **Backend:** Deploy the Node/Express API on a service like Render.
 * Ensure the frontend correctly points to the live backend API URL.
 client/src/components/
-## **Project Structure**
 
+## **Project Structure**
+```
 fullstack_ecommerce/
 │
 ├── client/                          # React Frontend
@@ -224,23 +225,8 @@ fullstack_ecommerce/
 ├── .gitignore
 ├── README.md
 └── package.json                     # Root package.json (optional for monorepo)
+```
 
-[Note] All files in sub-directories are initially created and are empty as default.
-
-# For the 'client/' directory:
-I already ran: 
-``` bash
-sudo npm install react-router-dom axios lucide-react @stripe/react-stripe-js @stripe/stripe-js @reduxjs/toolkit react-redux
-```:
-* But when this command was ran, it produced some errors, and whose errors are:
-```
-npm error code EJSONPARSE
-npm error JSON.parse Invalid package.json: JSONParseError: Unexpected end of JSON input while parsing empty string
-npm error JSON.parse Failed to parse JSON data.
-npm error JSON.parse Note: package.json must be actual JSON, not just JavaScript.
-npm error A complete log of this run can be found in: /root/.npm/_logs/2025-11-26T09_00_54_541Z-debug-0.log
-```
-```
 
 [Package Dependencies] :
 
@@ -272,7 +258,7 @@ Here is a list of the npm packages required for the application to run, broken d
   Development Dependency:
    * nodemon: To automatically restart the server during development.
 
-  ---
+
 
   Frontend (client/)
 
@@ -289,7 +275,7 @@ Here is a list of the npm packages required for the application to run, broken d
   Development Dependency:
    * tailwindcss: The utility-first CSS framework used for styling.
 
-  ---
+
 
   Startup Commands for Cloud Services (like Vercel)
 
