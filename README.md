@@ -4,6 +4,8 @@ The goal is to build a modern, fully functional store with a dedicated customer 
 
 Here is a detailed outline of the technical requirements, broken down by the MERN stack components, ensuring you hit all the necessary complexity markers.
 
+
+
 ## **1\. Frontend Requirements (React.js / Tailwind CSS)**
 
 ### **User Interface (UI)**
@@ -32,6 +34,8 @@ Here is a detailed outline of the technical requirements, broken down by the MER
 * Include instant client-side form validation (e.g., for login/checkout).  
 * Implement Asynchronous JavaScript (Fetch/Axios) to communicate with the API without refreshing the page.
 
+
+
 ## **2\. Backend Requirements (Node.js / Express / MongoDB)**
 
 ### **API Architecture**
@@ -57,6 +61,8 @@ Here is a detailed outline of the technical requirements, broken down by the MER
 * Implement server-side validation and authorization.  
 * Use Express Middleware to verify JWTs for protected routes (e.g., placing an order, accessing user profile).  
 * Use Express Middleware to validate incoming request body data.
+
+
 
 ## **3\. Core E-Commerce & Deployment Requirements**
 
@@ -91,7 +97,8 @@ Here is a detailed outline of the technical requirements, broken down by the MER
 * Ensure the frontend correctly points to the live backend API URL.
 client/src/components/
 
-## **Project Structure**
+
+### **Project Structure**
 ```
 fullstack_ecommerce/
 │
@@ -228,61 +235,61 @@ fullstack_ecommerce/
 ```
 
 
+
+
 ## **4\. Package Dependencies**
 
 Here is a list of the npm packages required for the application to run, broken down by the frontend and backend, along with
-  guidance for deploying to a cloud service like Vercel.
+guidance for deploying to a cloud service like Vercel.
 
-  [Required NPM Packages] :
+**You can install all dependencies for each part of the application by running `npm install` in both the `client/` and `server/`directories respectively.**
 
-  You can install all dependencies for each part of the application by running npm install in both the client/ and server/
-  directories respectively.
+### Backend (server/)
 
-  Backend (server/)
+#### These packages are required to run the Express API server:
 
-  These packages are required to run the Express API server.
-
-   * bcryptjs: For hashing user passwords.
-   * cookie-parser: To parse cookie headers.
-   * cors: To enable Cross-Origin Resource Sharing.
-   * dotenv: To load environment variables from a .env file.
-   * express: The web server framework.
-   * express-async-handler: To handle exceptions within async Express routes.
-   * express-rate-limit: For basic API rate-limiting.
-   * express-validator: For server-side input validation.
-   * jsonwebtoken: To create and verify JSON Web Tokens for authentication.
-   * mongoose: The Object Data Modeling (ODM) library for MongoDB.
-   * nodemailer: For sending emails (e.g., order confirmations).
-   * stripe: The official Node.js library for the Stripe payment API.
-
-  Development Dependency:
-   * nodemon: To automatically restart the server during development.
+   * **`bcryptjs`**: For hashing user passwords.
+   * **`cookie-parser`**: To parse cookie headers.
+   * **`cors`**: To enable Cross-Origin Resource Sharing.
+   * **`dotenv`**: To load environment variables from a .env file.
+   * **`express`**: The web server framework.
+   * **`express-async-handler`**: To handle exceptions within async Express routes.
+   * **`express-rate-limit`**: For basic API rate-limiting.
+   * **`express-validator`**: For server-side input validation.
+   * **`jsonwebtoken`**: To create and verify JSON Web Tokens for authentication.
+   * **`mongoose`**: The Object Data Modeling (ODM) library for MongoDB.
+   * **`nodemailer`**: For sending emails (e.g., order confirmations).
+   * **`stripe`**: The official Node.js library for the Stripe payment API.
 
 
 
-  Frontend (client/)
-
-  These packages are required for the React user interface.
-
-   * @reduxjs/toolkit: The official, opinionated toolset for efficient Redux development.
-   * @stripe/react-stripe-js & @stripe/stripe-js: To integrate Stripe Elements for payments in React.
-   * axios: For making HTTP requests to the backend API.
-   * lucide-react: A library of simply beautiful icons.
-   * react, react-dom, react-scripts: Core libraries for building a Create React App.
-   * react-redux: Official React bindings for Redux.
-   * react-router-dom: For client-side routing and navigation.
-
-  Development Dependency:
-   * tailwindcss: The utility-first CSS framework used for styling.
+#### Development Dependency:
+   * **`nodemon`**: To automatically restart the server during development.
 
 
+### Frontend (client/)
 
-  Startup Commands for Cloud Services (like Vercel)
+#### These packages are required for the React user interface.
 
-  Deploying this full-stack project requires handling the frontend and backend separately, as they are distinct application
-  types.
+   * **`@reduxjs/toolkit`**: The official, opinionated toolset for efficient Redux development.
+   * **`@stripe/react-stripe-js`** & **`@stripe/stripe-js`**: To integrate Stripe Elements for payments in React.
+   * **`axios`**: For making HTTP requests to the backend API.
+   * **`lucide-react`**: A library of simply beautiful icons.
+   * **`react`**, **`react-dom`**, **`react-scripts`**: Core libraries for building a Create React App.
+   * **`react-redux`**: Official React bindings for Redux.
+   * **`react-router-dom`**: For client-side routing and navigation.
 
-  1. Frontend Deployment (on Vercel)
+### Development Dependency:
+   * **`tailwindcss`**: The utility-first CSS framework used for styling.
+
+
+
+## **5\. Startup Commands for Cloud Services (like Vercel)**
+
+
+**Deploying this full-stack project requires handling the frontend and backend separately, as they are distinct application types.**
+
+### **1\. Frontend Deployment (on Vercel)**
 
   Vercel is perfectly suited for deploying the frontend (client) part of your application.
 
@@ -294,27 +301,27 @@ Here is a list of the npm packages required for the application to run, broken d
   The most important configuration steps in your Vercel project settings would be:
    1. Set the Root Directory: Set this to client. This tells Vercel to run the build commands from within your client-side
       folder.
-   2. Set Environment Variables: You must set the REACT_APP_API_BASE_URL environment variable to the public URL of your deployed
-      backend API. You will also need to add your REACT_APP_STRIPE_PUBLIC_KEY.
+   2. Set Environment Variables: You must set the **`REACT_APP_API_BASE_URL`** environment variable to the public URL of your deployed
+      backend API. You will also need to add your **`REACT_APP_STRIPE_PUBLIC_KEY`**.
 
-  2. Backend Deployment (Not on Vercel)
+### **2\. Backend Deployment (Not on Vercel)**
 
-  Your Express.js server is a long-running Node.js process, which is not compatible with Vercel's standard deployment model
-  (which is for static sites and serverless functions).
+Your Express.js server is a long-running Node.js process, which is not compatible with Vercel's standard deployment model
+(which is for static sites and serverless functions).
 
-  As recommended in the project's README.md, you should deploy the backend to a different service that supports persistent
-  Node.js applications, such as:
+As recommended in the project's README.md, you should deploy the backend to a different service that supports persistent
+Node.js applications, such as:
    * Render (Recommended in your README.md)
    * Heroku
    * AWS EC2 or AWS Elastic Beanstalk
 
-  On a service like Render, you would typically configure:
+On a service like Render, you would typically configure:
    * Start Command: npm start
-   * Environment Variables: You would need to add all the variables from your server/.env file (like MONGO_URI, JWT_SECRET,
+   * Environment Variables: You would need to add all the variables from your server/.env file (like **`MONGO_URI`**, **`JWT_SECRET`**,
      etc.) into the service's environment variable settings.
 
 
 
 
-# For the description of files and directories in the already created file tree:
-* See ARCHITECTURE.md 
+### For the description of files and directories in the already created file tree:
+* See [ARCHITECTURE.md](https://github.com/sacredibis/fullstack_ecommerce/blob/master/ARCHITECTURE.md)
