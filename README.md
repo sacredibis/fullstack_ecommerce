@@ -317,7 +317,7 @@ Node.js applications, such as:
 
 On a service like Render, you would typically configure:
    * Start Command: npm start
-   * Environment Variables: You would need to add all the variables from your server/.env file (like **`MONGO_URI`**, **`JWT_SECRET`**,
+   * Environment Variables: You would need to add all the variables from your `server/.env` file (like **`MONGO_URI`**, **`JWT_SECRET`**,
      etc.) into the service's environment variable settings.
 
 
