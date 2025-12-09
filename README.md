@@ -322,6 +322,5 @@ On a service like Render, you would typically configure:
 
 
 
-
 ### For the description of files and directories in the already created file tree:
 * See [ARCHITECTURE.md](https://github.com/sacredibis/fullstack_ecommerce/blob/master/ARCHITECTURE.md)
