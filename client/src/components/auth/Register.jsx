@@ -71,6 +71,7 @@ const Register = () => {
               value={email}
               onChange={handleChange}
               required
+              autocomplete="email"
             />
           </div>
           <div className="mb-4">
