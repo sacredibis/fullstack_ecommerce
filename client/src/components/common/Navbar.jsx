@@ -31,6 +31,9 @@ const Navbar = () => {
           <Link to="/login" className="ml-6 text-gray-600 hover:text-gray-800">
             Login
           </Link>
+          <Link to="/register" className="ml-6 text-gray-600 hover:text-gray-800">
+            Sign Up
+          </Link>
         </div>
       </div>
     </nav>
